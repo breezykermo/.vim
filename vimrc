@@ -266,7 +266,7 @@ imap jk <ESC>l
 
 nnoremap <F6> :setlocal spell! spell?<CR>
 
-" Select search pattern howewever do not jump to the next one
+" Proxy tcomment's 'gcc' command to toggle comment on a line
 nnoremap <leader>c :TComment<CR>
 
 " Search mappings: These will make it so that going to the next one in a
