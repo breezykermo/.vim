@@ -599,3 +599,10 @@ let g:rust_clip_command = 'xclip -selection clipboard'
 let g:terraform_fmt_on_save=1
 
 " vim:ts=2:sw=2:et
+
+" =================== LK updates ===========================
+set foldmethod=indent
+au BufRead * normal zR
+
+set shell=/bin/bash
+
