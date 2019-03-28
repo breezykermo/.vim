@@ -118,3 +118,9 @@
 [submodule "bundle/vim-jsx"]
 	path = bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
+[submodule "bundle/vim-allomancer"]
+	path = bundle/vim-allomancer
+	url = https://github.com/Nequo/vim-allomancer
+[submodule "bundle/vim-vue"]
+	path = bundle/vim-vue
+	url = https://github.com/posva/vim-vue
