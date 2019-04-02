@@ -354,7 +354,7 @@ autocmd FileType dockerfile set noexpandtab
 
 " shell/config/systemd settings
 autocmd FileType fstab,systemd set noexpandtab
-autocmd FileType gitconfig,sh,toml set noexpandtab
+autocmd FileType itconfig,sh,toml set noexpandtab
 
 " python indent
 autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 smarttab expandtab
@@ -432,6 +432,8 @@ nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gp :Gpush<CR>
 vnoremap <leader>gb :Gblame<CR>
+
+let g:gitgutter_git_executable="/usr/local/bin/git"
 
 " =================== Vim-cfmt ===================
 let g:cfmt_style = '-linux'
