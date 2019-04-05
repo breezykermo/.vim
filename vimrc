@@ -328,6 +328,7 @@ au BufNewFile,BufRead *.hpp setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.json setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.jade setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.j2 setlocal expandtab ts=2 sw=2
+au BufNewFile,BufRead *.vue setlocal expandtab ts=2 sw=2
 
 augroup filetypedetect
   au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
@@ -357,7 +358,7 @@ autocmd FileType fstab,systemd set noexpandtab
 autocmd FileType itconfig,sh,toml set noexpandtab
 
 " python indent
-autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 smarttab expandtab
+autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=120 smarttab expandtab
 
 " toml settings
 au BufRead,BufNewFile MAINTAINERS set ft=toml
@@ -500,7 +501,7 @@ noremap <Leader>f :NERDTreeFind<cr>
 
 let NERDTreeShowHidden=1
 
-let NERDTreeIgnore=['\.vim$', '\~$', '\.git$', '.DS_Store']
+let NERDTreeIgnore=['\.vim$', '\~$', '\.git$', '.DS_Store', '\.pyc$']
 
 " Close nerdtree and vim on close file
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
