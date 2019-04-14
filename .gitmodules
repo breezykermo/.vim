@@ -118,3 +118,15 @@
 [submodule "bundle/vim-vue"]
 	path = bundle/vim-vue
 	url = https://github.com/posva/vim-vue
+[submodule "bundle/typescript-vim"]
+	path = bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim
+[submodule "bundle/vim-jsx-typescript"]
+	path = bundle/vim-jsx-typescript
+	url = https://github.com/peitalin/vim-jsx-typescript
+[submodule "bundle/vim-jsx-pretty"]
+	path = bundle/vim-jsx-pretty
+	url = https://github.com/MaxMEllon/vim-jsx-pretty
+[submodule "bundle/black"]
+	path = bundle/black
+	url = https://github.com/ambv/black
