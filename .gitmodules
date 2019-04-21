@@ -130,3 +130,6 @@
 [submodule "bundle/black"]
 	path = bundle/black
 	url = https://github.com/ambv/black
+[submodule "bundle/vim-mustache-handlebars"]
+	path = bundle/vim-mustache-handlebars
+	url = https://github.com/mustache/vim-mustache-handlebars
