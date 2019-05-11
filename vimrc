@@ -88,8 +88,20 @@ set ttimeout
 set ttimeoutlen=10
 
 " Better Completion
-set complete=.,w,b,u,t
-set completeopt=longest,menuone
+" set complete=.,w,b,u,t
+" set completeopt=longest,menuone
+" use <tab> for trigger completion and navigate to the next complete item
+
+" coc.nvim completion on tab
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
 if &history < 1000
   set history=50
