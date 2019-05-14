@@ -345,6 +345,7 @@ au BufNewFile,BufRead *.c setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.ts setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.tsx setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.css setlocal expandtab ts=2 sw=2
+au BufNewFile,BufRead *.vue setlocal expandtab ts=2 sw=2
 
 augroup filetypedetect
   au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
