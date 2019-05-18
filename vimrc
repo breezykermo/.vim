@@ -4,7 +4,6 @@ call pathogen#helptags()
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
 filetype plugin indent on     " required
 
 "
@@ -39,8 +38,8 @@ set hlsearch                    " Highlight found searches
 set ignorecase                  " Search case insensitive...
 set smartcase                   " ... but not when search pattern contains upper case characters
 set ttyfast
-" set ttyscroll=3               " noop on linux ?
 set lazyredraw          	      " Wait to redraw "
+
 
 " speed up syntax highlighting
 set nocursorcolumn
@@ -65,32 +64,24 @@ set formatoptions=qrn1
 "set relativenumber
 "set norelativenumber
 
-" mail line wrapping
-au BufRead /tmp/mutt-* set tw=72
-
 set autoindent
 set complete-=i
 set showmatch
 set smarttab
-
 set et
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
 set nrformats-=octal
 set shiftround
+set foldmethod=indent
+au BufRead * normal zR
 
 " Time out on key codes but not mappings.
 " Basically this makes terminal Vim work sanely.
 set notimeout
 set ttimeout
 set ttimeoutlen=10
-
-" Better Completion
-" set complete=.,w,b,u,t
-" set completeopt=longest,menuone
-" use <tab> for trigger completion and navigate to the next complete item
 
 " coc.nvim completion on tab
 function! s:check_back_space() abort
@@ -134,9 +125,6 @@ endif
 
 " If linux then set ttymouse
 let s:uname = system("echo -n \"$(uname)\"")
-" if !v:shell_error && s:uname == "Linux" && !has('nvim')
-"   set ttymouse=xterm
-" endif
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -148,7 +136,6 @@ endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
@@ -189,9 +176,9 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 " let g:hybrid_use_Xresources = 1
 " let g:rehash256 = 1
-colorscheme allomancer
-set guifont=Inconsolata:h15
-set guioptions-=L
+colorscheme delek
+" set guifont=Inconsolata:h15
+" set guioptions-=L
 
 " This comes first, because we have mappings that depend on leader
 " With a map leader it's possible to do extra key combinations
@@ -216,8 +203,6 @@ autocmd FileType qf wincmd J
 ":clist   list all errors
 map <C-n> :cn<CR>
 map <C-m> :cp<CR>
-
-nnoremap <silent> <leader>q :Sayonara<CR>
 
 " Replace the current buffer with the given new file. That means a new file
 " will be open in a buffer while the old one will be deleted
@@ -312,13 +297,13 @@ cmap w!! w !sudo tee > /dev/null %
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+" inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
+" function! XTermPasteBegin()
+"   set pastetoggle=<Esc>[201~
+"   set paste
+"   return ""
+" endfunction
 
 " set 80 character line limit
 if exists('+colorcolumn')
@@ -347,13 +332,12 @@ au BufNewFile,BufRead *.ts setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.tsx setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.css setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.vue setlocal expandtab ts=2 sw=2
+au FileType nginx setlocal noet ts=4 sw=4 sts=4
 
 augroup filetypedetect
   au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
   au BufNewFile,BufRead .nginx.conf*,nginx.conf* setf nginx
 augroup END
-
-au FileType nginx setlocal noet ts=4 sw=4 sts=4
 
 " Go settings
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
@@ -454,25 +438,18 @@ vnoremap <leader>gb :Gblame<CR>
 
 let g:gitgutter_git_executable="/usr/local/bin/git"
 
-" =================== Vim-cfmt ===================
-let g:cfmt_style = '-linux'
-"autocmd BufWritePre *.c,*.h Cfmt
-
-" ================== linuxsty ====================
-"let g:linuxsty_patterns = ['/usr/src/', '/linux']
-
 " ==================== Vim-go ====================
 let g:go_fmt_fail_silently = 0
 let g:go_fmt_command = "goimports"
 let g:go_autodetect_gopath = 1
 let g:go_term_enabled = 1
 let g:go_snippet_engine = "neosnippet"
-let g:go_highlight_space_tab_error = 0
-let g:go_highlight_array_whitespace_error = 0
-let g:go_highlight_trailing_whitespace_error = 0
-let g:go_highlight_extra_types = 0
-let g:go_highlight_operators = 0
-let g:go_highlight_build_constraints = 1
+" let g:go_highlight_space_tab_error = 0
+" let g:go_highlight_array_whitespace_error = 0
+" let g:go_highlight_trailing_whitespace_error = 0
+" let g:go_highlight_extra_types = 0
+" let g:go_highlight_operators = 0
+" let g:go_highlight_build_constraints = 1
 
 
 au FileType go nmap <Leader>s <Plug>(go-def-split)
@@ -488,13 +465,6 @@ au FileType go nmap <leader>dt  <Plug>(go-test-compile)
 au FileType go nmap <Leader>d <Plug>(go-doc)
 
 au FileType go nmap <Leader>e <Plug>(go-rename)
-
-" neovim specific
-" if has('nvim')
-"   au FileType go nmap <leader>rt <Plug>(go-run-tab)
-"   au FileType go nmap <Leader>rs <Plug>(go-run-split)
-"   au FileType go nmap <Leader>rv <Plug>(go-run-vertical)
-" endif
 
 " I like these more!
 augroup go
@@ -525,7 +495,6 @@ let NERDTreeIgnore=['\.vim$', '\~$', '\.git$', '.DS_Store', '\.pyc$', '__pycache
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " ==================== vim-json ====================
-
 let g:vim_json_syntax_conceal = 0
 
 " ==================== vim-multiple-cursors ====================
@@ -550,22 +519,20 @@ function! Multiple_cursors_after()
 endfunction
 
 " ========= vim-better-whitespace ==================
-
 " auto strip whitespace except for file with extention blacklisted
 let blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown']
 autocmd BufWritePre * if index(blacklist, &ft) < 0 | StripWhitespace
 
 " ========= vim-markdown ==================
-
 " disable folding
-let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_folding_disabled = 1
 
 " Allow for the TOC window to auto-fit when it's possible for it to shrink.
 " It never increases its default size (half screen), it only shrinks.
 let g:vim_markdown_toc_autofit = 1
 
 " Disable conceal
-let g:vim_markdown_conceal = 0
+" let g:vim_markdown_conceal = 0
 
 " Allow the ge command to follow named anchors in links of the form
 " file#anchor or just #anchor, where file may omit the .md extension as usual
@@ -577,7 +544,6 @@ let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_json_frontmatter = 1
 
 " =================== vim-airline ========================
-
 let g:airline_theme='solarized'
 
 " set to use powerline fonts when not in a ssh session
@@ -587,7 +553,6 @@ if !g:remoteSession
 endif
 
 " =================== rust.vim ========================
-
 " Enable automatic running of :RustFmt when a buffer is saved.
 let g:rustfmt_autosave = 1
 
@@ -596,19 +561,7 @@ let g:rustfmt_autosave = 1
 " clipboard.
 let g:rust_clip_command = 'xclip -selection clipboard'
 
-" =================== vim-terraform ========================
-
-" Allow vim-terraform to override your .vimrc indentation syntax for matching files.
-"let g:terraform_align=1
-
-" Run terraform fmt on save.
-let g:terraform_fmt_on_save=1
-
-" vim:ts=2:sw=2:et
-
 " =================== LK updates ===========================
-set foldmethod=indent
-au BufRead * normal zR
-
+" don't use fish for commands in Vim
 set shell=/bin/bash
 
