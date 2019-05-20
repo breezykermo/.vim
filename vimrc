@@ -60,7 +60,7 @@ autocmd FileType help wincmd L
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-"set colorcolumn=79
+set colorcolumn=79
 "set relativenumber
 "set norelativenumber
 
@@ -360,7 +360,7 @@ autocmd FileType fstab,systemd set noexpandtab
 autocmd FileType itconfig,sh,toml set noexpandtab
 
 " python indent
-autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=120 smarttab expandtab
+autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=120 colorcolumn=120 smarttab expandtab
 
 " toml settings
 au BufRead,BufNewFile MAINTAINERS set ft=toml
