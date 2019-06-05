@@ -347,7 +347,7 @@ au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 autocmd BufNewFile,BufReadPost *.scala setl shiftwidth=2 expandtab
 
 " Markdown Settings
-autocmd BufNewFile,BufReadPost *.md setl ts=4 sw=4 sts=4 textwidth=120 colorcolumn= expandtab
+autocmd BufNewFile,BufReadPost *.md setl ts=2 sw=4 sts=2 expandtab
 
 " lua settings
 autocmd BufNewFile,BufRead *.lua setlocal noet ts=4 sw=4 sts=4
@@ -532,7 +532,7 @@ autocmd BufWritePre * if index(blacklist, &ft) < 0 | StripWhitespace
 let g:vim_markdown_toc_autofit = 1
 
 " Disable conceal
-" let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal = 0
 
 " Allow the ge command to follow named anchors in links of the form
 " file#anchor or just #anchor, where file may omit the .md extension as usual
