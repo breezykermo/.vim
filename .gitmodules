@@ -133,3 +133,9 @@
 [submodule "bundle/coc.nvim"]
 	path = bundle/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
+[submodule "bundle/styled-components"]
+	path = bundle/styled-components
+	url = https://github.com/styled-components/vim-styled-components
+[submodule "bundle/vim-prettier"]
+	path = bundle/vim-prettier
+	url = https://github.com/prettier/vim-prettier

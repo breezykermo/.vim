@@ -564,4 +564,3 @@ let g:rust_clip_command = 'xclip -selection clipboard'
 " =================== LK updates ===========================
 " don't use fish for commands in Vim
 set shell=/bin/bash
-
