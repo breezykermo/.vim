@@ -167,13 +167,18 @@ endif " has("autocmd")
 
 
 syntax enable
-if has('gui_running')
-  set transparency=3
-  " fix js regex syntax
-  set regexpengine=1
-  syntax enable
-endif
+" if has('gui_running')
+"   set transparency=3
+"   " fix js regex syntax
+"   set regexpengine=1
+"   syntax enable
+" endif
 set background=dark
+<<<<<<< HEAD
+=======
+colorscheme gruvbox
+let g:gruvbox_termcolors=16
+>>>>>>> 2ce0f41... update vim
 
 " This comes first, because we have mappings that depend on leader
 " With a map leader it's possible to do extra key combinations
@@ -518,28 +523,8 @@ endfunction
 let blacklist = ['diff', 'gitcommit', 'unite', 'qf', 'help', 'markdown']
 autocmd BufWritePre * if index(blacklist, &ft) < 0 | StripWhitespace
 
-" ========= vim-markdown ==================
-" disable folding
-" let g:vim_markdown_folding_disabled = 1
-
-" Allow for the TOC window to auto-fit when it's possible for it to shrink.
-" It never increases its default size (half screen), it only shrinks.
-let g:vim_markdown_toc_autofit = 1
-
-" Disable conceal
-let g:vim_markdown_conceal = 0
-
-" Allow the ge command to follow named anchors in links of the form
-" file#anchor or just #anchor, where file may omit the .md extension as usual
-let g:vim_markdown_follow_anchor = 1
-
-" highlight frontmatter
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_toml_frontmatter = 1
-let g:vim_markdown_json_frontmatter = 1
-
 " =================== vim-airline ========================
-let g:airline_theme='solarized'
+let g:airline_theme='gruvbox'
 
 " set to use powerline fonts when not in a ssh session
 let g:remoteSession = ($STY == "")
