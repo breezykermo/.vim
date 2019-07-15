@@ -257,7 +257,7 @@ map j gj
 " Just go out in insert mode
 imap jk <ESC>l
 
-nnoremap <F6> :setlocal spell! spell?<CR>
+" nnoremap <F6> :setlocal spell! spell?<CR>
 
 " Proxy tcomment's 'gcc' command to toggle comment on a line
 nnoremap <leader>c :TComment<CR>
@@ -314,7 +314,6 @@ endif
 
 au BufNewFile,BufRead *.vim setlocal noet ts=4 sw=4 sts=4
 au BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
-au BufNewFile,BufRead *.md setlocal spell noet ts=4 sw=4
 au BufNewFile,BufRead *.yml,*.yaml setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.cpp setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.hpp setlocal expandtab ts=2 sw=2
@@ -367,7 +366,7 @@ au BufRead,BufNewFile *.workflow set ft=hcl
 au BufRead,BufNewFile *.mips set ft=mips
 
 " spell check for git commits
-autocmd FileType gitcommit setlocal spell
+" autocmd FileType gitcommit setlocal spell
 
 " Wildmenu completion {{{
 set wildmenu
