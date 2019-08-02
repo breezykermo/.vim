@@ -83,6 +83,8 @@ set notimeout
 set ttimeout
 set ttimeoutlen=10
 
+colorscheme gruvbox
+
 " coc.nvim completion on tab
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -172,13 +174,6 @@ if has('gui_running')
   syntax enable
 endif
 set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-" let g:hybrid_use_Xresources = 1
-" let g:rehash256 = 1
-colorscheme delek
-" set guifont=Inconsolata:h15
-" set guioptions-=L
 
 " This comes first, because we have mappings that depend on leader
 " With a map leader it's possible to do extra key combinations
