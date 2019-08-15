@@ -136,12 +136,12 @@
 [submodule "bundle/vim-prettier"]
 	path = bundle/vim-prettier
 	url = https://github.com/prettier/vim-prettier
+[submodule "bundle/gruvbox"]
+	path = bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox
 [submodule "bundle/vim-gutentags"]
 	path = bundle/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags
 [submodule "bundle/vim-polyglot"]
 	path = bundle/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
-[submodule "bundle/gruvbox"]
-	path = bundle/gruvbox
-	url = https://github.com/morhetz/gruvbox

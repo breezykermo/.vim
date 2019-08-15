@@ -83,8 +83,6 @@ set notimeout
 set ttimeout
 set ttimeoutlen=10
 
-colorscheme gruvbox
-
 " coc.nvim completion on tab
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -173,12 +171,10 @@ syntax enable
 "   set regexpengine=1
 "   syntax enable
 " endif
+
 set background=dark
-<<<<<<< HEAD
-=======
 colorscheme gruvbox
 let g:gruvbox_termcolors=16
->>>>>>> 2ce0f41... update vim
 
 " This comes first, because we have mappings that depend on leader
 " With a map leader it's possible to do extra key combinations
@@ -341,7 +337,6 @@ augroup END
 
 " Go settings
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
-" autocmd BufEnter *.go colorscheme nofrils-dark
 
 " scala settings
 autocmd BufNewFile,BufReadPost *.scala setl shiftwidth=2 expandtab
