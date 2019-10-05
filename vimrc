@@ -335,6 +335,7 @@ au BufNewFile,BufRead *.tsx setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.css setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.vue setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.scss setlocal expandtab ts=2 sw=2
+au BufNewFile,BufRead *.svelte set syntax=html
 au FileType nginx setlocal noet ts=4 sw=4 sts=4
 
 augroup filetypedetect
