@@ -50,7 +50,7 @@ set synmaxcol=300
 set re=1
 
 " do not hide markdown
-set conceallevel=0
+let g:vim_markdown_conceal = 0
 
 " open help vertically
 command! -nargs=* -complete=help Help vertical belowright help <args>
