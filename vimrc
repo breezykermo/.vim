@@ -173,8 +173,7 @@ syntax enable
 " endif
 
 set background=dark
-colorscheme gruvbox
-let g:gruvbox_termcolors=16
+colorscheme allomancer
 
 " This comes first, because we have mappings that depend on leader
 " With a map leader it's possible to do extra key combinations
