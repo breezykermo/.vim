@@ -327,6 +327,7 @@ au BufNewFile,BufRead *.json setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.js setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.jade setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.j2 setlocal expandtab ts=2 sw=2
+au BufNewFile,BufRead *.jsx setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.vue setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.c setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.ts setlocal expandtab ts=2 sw=2
@@ -335,6 +336,7 @@ au BufNewFile,BufRead *.css setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.vue setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.scss setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.svelte setlocal syntax=html ts=2 sw=2
+au BufNewFile,BufRead *.java setlocal expandtab ts=2 sw=2
 au FileType nginx setlocal noet ts=4 sw=4 sts=4
 
 augroup filetypedetect
@@ -362,7 +364,7 @@ autocmd FileType fstab,systemd set noexpandtab
 autocmd FileType itconfig,sh,toml set noexpandtab
 
 " python indent
-autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=120 colorcolumn=120 smarttab expandtab
+autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 textwidth=80 colorcolumn=80 smarttab expandtab
 
 " toml settings
 au BufRead,BufNewFile MAINTAINERS set ft=toml
@@ -431,6 +433,7 @@ imap <C-g> <esc>:MyCtrlPTag<cr>
 
 nmap <C-b> :CtrlPCurWD<cr>
 imap <C-b> <esc>:CtrlPCurWD<cr>
+nnoremap <leader>. :CtrlPTag<cr>
 
 " ==================== Fugitive ====================
 nnoremap <leader>ga :Git add %:p<CR><CR>
@@ -546,6 +549,3 @@ let g:rust_clip_command = 'xclip -selection clipboard'
 " =================== LK updates ===========================
 " don't use fish for commands in Vim
 set shell=/bin/bash
-
-" ctags
-nnoremap <leader>. :CtrlPTag<cr>
