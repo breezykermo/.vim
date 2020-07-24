@@ -1,6 +1,7 @@
 .git/
 .git
 bundle/*/doc/tags
+bundle/*
 black/
 init.vim
 tags
