@@ -3,3 +3,8 @@
 bundle/*/doc/tags
 black/
 init.vim
+tags
+tags.lock
+tags.temp
+
+tags

@@ -5,6 +5,8 @@ call pathogen#helptags()
 set nocompatible              " be iMproved, required
 filetype off                  " required
 filetype plugin indent on     " required
+filetype plugin on
+syntax on
 
 "
 " Settings
@@ -549,3 +551,10 @@ let g:rust_clip_command = 'xclip -selection clipboard'
 " =================== LK updates ===========================
 " don't use fish for commands in Vim
 set shell=/bin/bash
+
+" vim-wiki for obsidian
+let g:vimwiki_list = [{'path':'~/notes/obsidian', 'ext':'.md', 'syntax':'default', 'index':'todo', 'diary_rel_path':'daily', 'auto_diary_index': 1}]
+nmap <Leader>w0 <Plug>VimwikiMakeDiaryNote
+nmap <Leader>w9 <Plug>VimwikiMakeYesterdayDiaryNote
+nmap <Leader>w- <Plug>VimwikiMakeTomorrowDiaryNote
+

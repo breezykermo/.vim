@@ -145,3 +145,6 @@
 [submodule "bundle/ale"]
 	path = bundle/ale
 	url = https://github.com/dense-analysis/ale
+[submodule "bundle/vimwiki-sync"]
+	path = bundle/vimwiki-sync
+	url = https://github.com/michal-h21/vimwiki-sync
