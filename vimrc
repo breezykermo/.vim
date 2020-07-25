@@ -557,4 +557,5 @@ let g:vimwiki_list = [{'path':'~/notes/obsidian', 'ext':'.md', 'syntax':'default
 nmap <Leader>w0 <Plug>VimwikiMakeDiaryNote
 nmap <Leader>w9 <Plug>VimwikiMakeYesterdayDiaryNote
 nmap <Leader>w- <Plug>VimwikiMakeTomorrowDiaryNote
+nmap <Leader>wt <Plug>VimwikiToggleListItem
 

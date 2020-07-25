@@ -148,6 +148,3 @@
 [submodule "bundle/vimwiki"]
     path = bundle/vimwiki
     url = https://github.com/vimwiki/vimwiki
-[submodule "bundle/vimwiki-sync"]
-	path = bundle/vimwiki-sync
-	url = https://github.com/michal-h21/vimwiki-sync
