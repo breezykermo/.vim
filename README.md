@@ -5,18 +5,18 @@ Just run the following commands via terminal to get perfectly set up:
 
 ```console
 $ cd ~/
-$ git clone --recursive https://github.com/jessfraz/.vim.git .vim
+$ git clone --recursive https://github.com/breezykermo/.vim.git .vim
 $ git submodule update --init
-$ ln -sf $HOME/.vim/vimrc $HOME/.vimrc
+$ cp $HOME/.vim/vimrc $HOME/.vimrc
 
 $ cd $HOME/.vim
 $ cd bundle/coc.nvim
-$ yarn install
+$ npm install
 
 ## Neovim
 Put the following in ~/.config/nvim/init.vim:
 ```
-let runtimepath^=~/.vim runtimepath+=~/.vim/after
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 ```
