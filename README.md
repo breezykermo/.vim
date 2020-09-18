@@ -9,9 +9,10 @@ $ git clone --recursive https://github.com/breezykermo/.vim.git .vim
 $ git submodule update --init
 $ cp $HOME/.vim/vimrc $HOME/.vimrc
 
+## extra installs
 $ cd $HOME/.vim
-$ cd bundle/coc.nvim
-$ yarn # NPM won't work, it seems 
+$ cd bundle/coc.nvim && yarn # NPM won't work, it seems 
+$ python3 -m pip install black
 
 ## Neovim
 Put the following in ~/.config/nvim/init.vim:
