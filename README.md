@@ -11,7 +11,7 @@ $ cp $HOME/.vim/vimrc $HOME/.vimrc
 
 $ cd $HOME/.vim
 $ cd bundle/coc.nvim
-$ npm install
+$ yarn # NPM won't work, it seems 
 
 ## Neovim
 Put the following in ~/.config/nvim/init.vim:
