@@ -85,6 +85,11 @@ set notimeout
 set ttimeout
 set ttimeoutlen=10
 
+" Aesthetics
+" Don't try to use fish shell for commands
+set shell=/bin/bash
+set guicursor+=n:hor20-Cursor/lCursor-blinkwait300-blinkon200-blinkoff150
+
 " coc.nvim completion on tab
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -175,7 +180,7 @@ syntax enable
 " endif
 
 set background=dark
-colorscheme allomancer
+colorscheme gruvbox
 
 " This comes first, because we have mappings that depend on leader
 " With a map leader it's possible to do extra key combinations
@@ -294,14 +299,6 @@ cmap w!! w !sudo tee > /dev/null %
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
-" inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
-" function! XTermPasteBegin()
-"   set pastetoggle=<Esc>[201~
-"   set paste
-"   return ""
-" endfunction
-
 " set 80 character line limit
 if exists('+colorcolumn')
   set colorcolumn=80
@@ -319,15 +316,13 @@ let g:ale_fix_on_save = 1
 " ----------------------------------------- "
 " File Type settings 			    		"
 " ----------------------------------------- "
-
-au BufNewFile,BufRead *.vim setlocal noet ts=4 sw=4 sts=4
+au BufNewFile,BufRead *.vim setlocal noet ts=2 sw=2 sts=2
 au BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
 au BufNewFile,BufRead *.yml,*.yaml setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.cpp setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.hpp setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.json setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.js setlocal expandtab ts=2 sw=2
-au BufNewFile,BufRead *.jade setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.j2 setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.jsx setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.vue setlocal expandtab ts=2 sw=2
@@ -349,14 +344,8 @@ augroup END
 " Go settings
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
-" scala settings
-autocmd BufNewFile,BufReadPost *.scala setl shiftwidth=2 expandtab
-
 " Markdown Settings
 autocmd BufNewFile,BufReadPost *.md setl ts=2 sw=4 sts=2 expandtab
-
-" lua settings
-autocmd BufNewFile,BufRead *.lua setlocal noet ts=4 sw=4 sts=4
 
 " Dockerfile settings
 autocmd FileType dockerfile set noexpandtab
@@ -370,12 +359,6 @@ autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4 te
 
 " toml settings
 au BufRead,BufNewFile MAINTAINERS set ft=toml
-
-" hcl settings
-au BufRead,BufNewFile *.workflow set ft=hcl
-
-" mips settings
-au BufRead,BufNewFile *.mips set ft=mips
 
 " spell check for git commits
 " autocmd FileType gitcommit setlocal spell
@@ -419,8 +402,6 @@ let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 " ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-let g:ctrlp_buftag_types = {'go' : '--language-force=go --golang-types=ftv'}
-
 func! MyCtrlPTag()
   let g:ctrlp_prompt_mappings = {
         \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
@@ -451,35 +432,6 @@ let g:go_fmt_command = "goimports"
 let g:go_autodetect_gopath = 1
 let g:go_term_enabled = 1
 let g:go_snippet_engine = "neosnippet"
-" let g:go_highlight_space_tab_error = 0
-" let g:go_highlight_array_whitespace_error = 0
-" let g:go_highlight_trailing_whitespace_error = 0
-" let g:go_highlight_extra_types = 0
-" let g:go_highlight_operators = 0
-" let g:go_highlight_build_constraints = 1
-
-
-au FileType go nmap <Leader>s <Plug>(go-def-split)
-au FileType go nmap <Leader>v <Plug>(go-def-vertical)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>l <Plug>(go-metalinter)
-
-au FileType go nmap <leader>r  <Plug>(go-run)
-
-au FileType go nmap <leader>b  <Plug>(go-build)
-au FileType go nmap <leader>t  <Plug>(go-test)
-au FileType go nmap <leader>dt  <Plug>(go-test-compile)
-au FileType go nmap <Leader>d <Plug>(go-doc)
-
-au FileType go nmap <Leader>e <Plug>(go-rename)
-
-" I like these more!
-augroup go
-  autocmd!
-  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
-  autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
-  autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
-augroup END
 
 " ==================== delimitMate ====================
 let g:delimitMate_expand_cr = 1
@@ -547,15 +499,3 @@ let g:rustfmt_autosave = 1
 " selected the current buffer, to the Rust playpen. Then copy the url to the
 " clipboard.
 let g:rust_clip_command = 'xclip -selection clipboard'
-
-" =================== LK updates ===========================
-" don't use fish for commands in Vim
-set shell=/bin/bash
-
-" vim-wiki for obsidian
-let g:vimwiki_list = [{'path':'~/notes/obsidian', 'ext':'.md', 'syntax':'default', 'index':'index', 'diary_rel_path':'daily', 'auto_diary_index': 1}]
-nmap <Leader>w0 <Plug>VimwikiMakeDiaryNote
-nmap <Leader>w9 <Plug>VimwikiMakeYesterdayDiaryNote
-nmap <Leader>w- <Plug>VimwikiMakeTomorrowDiaryNote
-nmap <Leader>wt <Plug>VimwikiToggleListItem
-
