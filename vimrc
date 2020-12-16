@@ -499,8 +499,17 @@ let g:rustfmt_autosave = 1
 " selected the current buffer, to the Rust playpen. Then copy the url to the
 " clipboard.
 let g:rust_clip_command = 'xclip -selection clipboard'
+" More here: https://github.com/fannheyward/coc-rust-analyzer
 nmap <leader>d :CocCommand rust-analyzer.openDocs<cr>
 
-" More here: https://github.com/fannheyward/coc-rust-analyzer
+" Writing mode
+" let g:limelight_conceal_ctermfg = '235'
+let g:limelight_conceal_ctermfg = '245'
+let g:limelight_conceal_guifg = '#282828'
+let g:limelight_default_coefficient = 0.5
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+map <Leader>l "dyiw:call MacDict(@d)<cr>
 
 
