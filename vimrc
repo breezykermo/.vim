@@ -181,6 +181,7 @@ syntax enable
 
 set background=dark
 colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE
 
 " This comes first, because we have mappings that depend on leader
 " With a map leader it's possible to do extra key combinations
