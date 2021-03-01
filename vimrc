@@ -334,7 +334,7 @@ au BufNewFile,BufRead *.css setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.vue setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.scss setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.svelte setlocal syntax=html ts=2 sw=2
-au BufNewFile,BufRead *.java setlocal expandtab ts=2 sw=2
+au BufNewFile,BufRead *.java setlocal expandtab ts=4 sw=4
 au FileType nginx setlocal noet ts=4 sw=4 sts=4
 
 augroup filetypedetect
@@ -520,6 +520,10 @@ let g:gutentags_generate_on_new = 1
 let g:gutentags_generate_on_missing = 1
 let g:gutentags_generate_on_write = 1
 let g:gutentags_generate_on_empty_buffer = 0
+let g:gutentags_ctags_extra_args = [
+      \ '--tag-relative=yes',
+      \ '--fields=+ailmnS',
+      \ ]
 let g:gutentags_ctags_exclude = [
     \ '*.git', '*.svg', '*.hg',
     \ '*/tests/*',
