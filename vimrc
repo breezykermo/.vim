@@ -580,4 +580,5 @@ cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 
 let g:vimwiki_list = [{'path': '~/Dropbox (Brown)/obsidian/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_folding = 'expr'
 
