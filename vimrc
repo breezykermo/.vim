@@ -172,7 +172,7 @@ else
 endif " has("autocmd")
 
 
-syntax enable
+" syntax enable
 " if has('gui_running')
 "   set transparency=3
 "   " fix js regex syntax
@@ -578,3 +578,6 @@ let g:gutentags_ctags_exclude = [
 let g:ackprg = 'ag --nogroup --nocolor --column'
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
+
+let g:vimwiki_list = [{'path': '~/Dropbox (Brown)/obsidian/', 'syntax': 'markdown', 'ext': '.md'}]
+

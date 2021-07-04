@@ -143,8 +143,8 @@
 	path = bundle/ale
 	url = https://github.com/dense-analysis/ale
 [submodule "bundle/vimwiki"]
-    path = bundle/vimwiki
-    url = https://github.com/vimwiki/vimwiki
+	path = bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
 [submodule "bundle/MacDict.vim"]
 	path = bundle/MacDict.vim
 	url = https://github.com/jonhiggs/MacDict.vim
