@@ -53,6 +53,7 @@ set re=1
 
 " do not hide markdown
 let g:vim_markdown_conceal = 0
+let g:markdown_folding = 1
 
 " open help vertically
 command! -nargs=* -complete=help Help vertical belowright help <args>
@@ -341,6 +342,7 @@ augroup filetypedetect
   au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
   au BufNewFile,BufRead .nginx.conf*,nginx.conf* setf nginx
   au BufNewFile,BufRead MLproject setf yaml
+  au BufNewFile,BufRead .tmpl setf yaml
 augroup END
 
 " Go settings
